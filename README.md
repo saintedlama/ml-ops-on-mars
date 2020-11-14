@@ -1,5 +1,7 @@
 # ML Ops 1: I heard that you know programming...
 
+![Node.js CI](https://github.com/saintedlama/ml-ops-on-mars/workflows/Node.js%20CI/badge.svg)
+
 ## Usage
 
 ```console
