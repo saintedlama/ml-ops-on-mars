@@ -4,8 +4,8 @@ const path = require("path");
 
 module.exports = function (input, next) {
   // Naive approach - spawn a process for each request
-  const modelProcess = spawn("python.exe", [path.join(__dirname, "models", "model1.py")], {
-    shell: true,
+  const modelProcess = spawn("python", [path.join(__dirname, "models", "model1.py")], {
+    shell: false,
   });
 
   let stdout = "";
