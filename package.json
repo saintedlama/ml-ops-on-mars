@@ -6,7 +6,8 @@
     "start": "node server.js",
     "watch": "nodemon server.js",
     "test": "mocha --recursive",
-    "coverage": "nyc npm test"
+    "coverage:test": "nyc npm test",
+    "coverage:report": "nyc report --reporter=text-lcov > coverage.lcov"
   },
   "dependencies": {
     "debug": "~2.6.9",
