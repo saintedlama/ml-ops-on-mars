@@ -1,6 +1,8 @@
-# ML Ops 1: I heard that you know programming...
+# ML Ops 2: We lost one rover
 
 ![Node.js CI](https://github.com/saintedlama/ml-ops-on-mars/workflows/Node.js%20CI/badge.svg)
+
+Solution to exercise one can be found here https://github.com/saintedlama/ml-ops-on-mars/releases/tag/exercise-1
 
 ## Usage
 
@@ -12,7 +14,7 @@ npm start
 ## API
 
 ```
-POST http://localhost:8080/predict [Number]
+POST http://localhost:8080/predict {"data": 1}
 ```
 
 ## Running tests and coverage

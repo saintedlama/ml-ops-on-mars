@@ -4,7 +4,7 @@ const path = require("path");
 
 module.exports = function (input, next) {
   // Naive approach - spawn a process for each request
-  const modelProcess = spawn("python", [path.join(__dirname, "models", "model1.py")], {
+  const modelProcess = spawn("python", [path.join(__dirname, "models", "model2.py")], {
     shell: false,
   });
 
@@ -15,6 +15,10 @@ module.exports = function (input, next) {
   modelProcess.stderr.on("data", (data) => (stderr += data));
 
   modelProcess.on("close", (code) => {
+    if (modelProcess.killed) {
+      return next(new Error("model timeout"));
+    }
+
     if (code != 0) {
       return next(new Error(`model execution exited with code ${code}. [stdout] ${stdout}, [stderr]: ${stderr}`));
     }
@@ -38,4 +42,6 @@ module.exports = function (input, next) {
 
   modelProcess.stdin.end(JSON.stringify(input));
   modelProcess.stdin.on("error", (err) => console.log("could not write to stdin of model", err));
+
+  setTimeout(() => modelProcess.kill("SIGTERM"), 10 * 1000);
 };
