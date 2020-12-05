@@ -2,7 +2,7 @@
 
 ![Node.js CI](https://github.com/saintedlama/ml-ops-on-mars/workflows/Node.js%20CI/badge.svg)
 
-Solution to exercise one can be found here https://github.com/saintedlama/ml-ops-on-mars/releases/tag/exercise-1
+Solution to exercise one can be found in branch [exercise-1](https://github.com/saintedlama/ml-ops-on-mars/tree/exercise-1)
 
 ## Usage
 
